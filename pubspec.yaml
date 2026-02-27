@@ -1,0 +1,31 @@
+name: which_number
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+   uses-material-design: true
+   fonts:
+     - family: Vazir
+       fonts:
+         - asset: assets/fonts/Vazir.ttf
+         - asset: assets/fonts/Vazir.eot
+         - asset: assets/fonts/Vazir.woff
+         - asset: assets/fonts/Vazir.woff2
+           style: normal

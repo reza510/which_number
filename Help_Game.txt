@@ -1,0 +1,81 @@
+﻿ویژگی‌های بازی
+
+    تولید عدد تصادفی بین ۱ تا ۱۰۰.
+
+    سه شانس به شکل قلب‌های قرمز نمایش داده می‌شوند.
+
+    فلش سبز بالا یعنی عدد بزرگ‌تر است (باید بالاتر حدس بزنید).
+
+    فلش قرمز پایین یعنی عدد کوچک‌تر است (باید پایین‌تر حدس بزنید).
+
+    پیام برد و باخت با ایموجی‌های شاد و غمگین.
+
+    اعتبارسنجی ورودی (عدد بودن، خالی نبودن، محدوده مجاز).
+
+    انیمیشن ساده برای فلش‌ها.
+
+    گرادیانت پس‌زمینه و کارت با سایه و گوشه‌های گرد.
+
+    دکمه بازی جدید برای شروع مجدد.
+
+
+تغییرات اعمال شده
+
+    دکمه‌ها: از RaisedButton و OutlineButton استفاده شده که با فلاتر ۲.۱۰.۰ سازگارند.
+
+    انیمیشن فلش: به جای AnimatedIcon از AnimatedSwitcher همراه با FadeTransition استفاده شده که آیکون را با انیمیشن محو شدن عوض می‌کند.
+
+    حذف کلاس اضافی: کلاس AnimatedIconData حذف شده و مشکل super-parameters برطرف شده است.
+
+    سازگاری با null safety: کد همچنان از null safety پشتیبانی می‌کند چون فلاتر ۲.۱۰.۰ به بعد از null safety پشتیبانی می‌کند.
+
+استفاده از فونت وزیر
+
+Running "flutter pub get" in which_number...                     1,399ms
+
+ Building with sound null safety
+
+Running Gradle task 'assembleDebug'...
+Flutter assets will be downloaded from https://storage.flutter-io.cn. Make sure
+you trust this source!
+lib/main.dart:9:16: Error: This requires the 'super-parameters' language feature
+ to be enabled.
+Try updating your pubspec.yaml to set the minimum SDK constraint to 2.15 or high
+er, and running 'pub get'.
+  const MyApp({super.key});
+               ^^^^^
+lib/main.dart:30:20: Error: This requires the 'super-parameters' language featur
+e to be enabled.
+Try updating your pubspec.yaml to set the minimum SDK constraint to 2.15 or high
+er, and running 'pub get'.
+  const GuessGame({super.key});
+                   ^^^^^
+lib/main.dart:257:29: Error: No named parameter with the name 'backgroundColor'.
+
+                            backgroundColor: Colors.amber.shade700,
+                            ^^^^^^^^^^^^^^^
+/E:/flutter/packages/flutter/lib/src/material/elevated_button.dart:146:22: Conte
+xt: Found this candidate, but the arguments don't match.
+  static ButtonStyle styleFrom({
+                     ^^^^^^^^^
+
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Script 'E:\flutter\packages\flutter_tools\gradle\flutter.gradle' line: 1102
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command 'E:\flutter\bin\flutter.bat'' finished with non-zero exit val
+ue 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug
+option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 2m 25s
+Running Gradle task 'assembleDebug'...                            161.3s
+Gradle task assembleDebug failed with exit code 1
