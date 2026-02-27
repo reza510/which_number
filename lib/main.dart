@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'حدس عدد',
       theme: ThemeData(
-        primarySwatch: Colors.blue,fontFamily: 'Vazir', 
-        // در صورت تمایل فونت فارسی اضافه کنید
+        primarySwatch: Colors.blue,
+        fontFamily: 'Vazir',
       ),
       debugShowCheckedModeBanner: false,
       home: GuessGame(),
