@@ -1,5 +1,6 @@
 ﻿import 'package:flutter/material.dart';
 import 'dart:math';
+import './Utils/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,13 +10,38 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'حدس عدد',
+      title: 'Which Number',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'Vazir',
       ),
       debugShowCheckedModeBanner: false,
-      home: GuessGame(),
+      home: Builder(
+        builder: (context) {
+          return SplashScreen(
+            items: [
+              SplashInfoItem(key: '🎯 ', value: 'ٌWhich Number'),
+              SplashInfoItem(key: 'Created by: ', value: 'AR510'),
+              SplashInfoItem(key: 'Version: ', value: '۱.۱.۰'),
+            ],
+            duration: const Duration(seconds: 3),
+            layout: DisplayLayout.borderedItems,
+            onFinish: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => GuessGame()),
+              );
+            },
+            // earlyCloseCallback: () {
+            //   // اگر کاربر دکمه را بزند، مستقیماً به صفحه بازی بروید
+            //   Navigator.pushReplacement(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => GuessGame()),
+            //   );
+            // },
+          );
+        },
+      ),
     );
   }
 }
@@ -68,7 +94,6 @@ class _GuessGameState extends State<GuessGame> {
     }
 
     final int? guess = int.tryParse(input);
-    print(_targetNumber);
     if (guess == null) {
       setState(() {
         _message = 'عدد معتبر وارد کنید.';
@@ -238,7 +263,7 @@ class _GuessGameState extends State<GuessGame> {
                     ),
                     const SizedBox(height: 20),
 
-                    // نمایش فلش راهنما با انیمیشن ساده (AnimatedSwitcher)
+                    // نمایش فلش راهنما با انیمیشن ساده (AnimatedCrossFade)
                     AnimatedCrossFade(
                       duration: const Duration(milliseconds: 300),
                       firstChild: const Icon(
